@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+ <form action="" method="post">
+    {% csrf_token %}
+<table border="1" align="center">
+<tr>
+    <td>Category</td>
+    <td><input type="text" name="txt_cate" id=""></td>
+</tr>
+    <td colspan="2" align="center"><input type="submit" value="Save" name="subs"><input type="submit" value="Reset" name="subr"></td>
+</tr>
+</table>
+<table border="1" align="center">
+<tr>
+    <th>Sl.NO</th>
+    <th>Category</th>
+    <th>Action</th>
+</tr>
+{% for i in data %}
+<tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{i.category_name}}</td>
+    <td><a href="{% url 'webadmin:delcategory' i.id %}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+ </form>   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subcategory</title>
+</head>
+<body>
+    <form action=""method="POST">
+        <table align="center" border="1">
+            <tr>
+                <td>Category</td>
+                <td><select name="Category" id="">
+                    <option value="">---Select---</option>
+                    {%for i in cate%}
+                    <option value="{{i.id}}">{{i.category_name}}</option>
+                    {%endfor%}
+                </select>></td>
+            </tr>
+            <tr>
+                <td>Subcategory</td>
+                <td><input type="text" name="txt_sub" id=""></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="submit" value="Save" name="sub_save"><input type="reset" value="Cancel" name="sub_cancel" ></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
